@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furniture Sales Forecasting Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <p><strong>Date:</strong> {{ input_date }}</p>
+        <p><strong>Predicted Sales:</strong> ${{ predicted_mean }}</p>
+        <p><strong>Confidence Interval:</strong> ${{ lower_bound }} - ${{ upper_bound }}</p>
+
+        <!-- Display the Matplotlib plot image -->
+        <img src="{{ url_for('static', filename='plot.png') }}" alt="Sales Plot">
+
+        <a href="/">Back to Input</a>
+    </div>
+</body>
+</html>
